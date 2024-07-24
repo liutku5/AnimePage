@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="../app.js"></script>
+    <title>Anime</title>
+    <link rel="stylesheet" href="../main.css">
+</head>
+<body>
+    <h1>Anime</h1>
+    <a href="./create.html">Create</a>
+
+    <div class="anime-container">
+        <h2>Anime List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name JP</th>
+                    <th>Name EN</th>
+                    <th>Release Date</th>
+                    <th>Source ID</th>
+                    <th>Episodes</th>
+                    <th>Description</th>
+                    <th>Studio</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="anime-list">
+                <!-- Anime will be appended here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            fetchAnime();
+        });
+    </script>
+</body>
+</html>

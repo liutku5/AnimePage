@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="../app.js"></script>
+    <title>Anime</title>
+    <link rel="stylesheet" href="../main.css">
+</head>
+<body>
+    <h1>Anime</h1>
+
+    <div class="form-container">
+        <form id="anime-form" class="createForm">
+            <input type="hidden" id="anime-id">
+            <input type="text" id="anime-nameJP" placeholder="Name JP" required>
+            <input type="text" id="anime-nameEN" placeholder="Name EN" required>
+            <input type="date" id="anime-releaseDate" placeholder="Release Date" required>
+            <input type="text" id="anime-sourceId" placeholder="Source ID" required>
+            <input type="number" id="anime-episodes" placeholder="Episodes" required>
+            <textarea id="anime-description" placeholder="Description" required></textarea>
+            <input type="text" id="anime-studio" placeholder="Studio" required>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>
