@@ -3,28 +3,35 @@ const apiUrl = 'http://localhost:8080/api/anime';
 async function fetchAnime() {
     try {
         const response = await axios.get(apiUrl);
-        const anime = response.data;
-        const animeList = document.getElementById('anime-list');
-        animeList.innerHTML = '';
+                const animeData = response.data;
+                const animeList = document.getElementById('anime-list');
+                animeList.innerHTML = '';
 
-        anime.forEach(oneAnime => {
-            const animeRow = `
-                <tr>
-                    <td>${oneAnime.nameJP}</td>
-                    <td>${oneAnime.nameEN}</td>
-                    <td>${oneAnime.releaseDate}</td>
-                    <td>${oneAnime.sourceId}</td>
-                    <td>${oneAnime.episodes}</td>
-                    <td>${oneAnime.description}</td>
-                    <td>${oneAnime.studio}</td>
-                    <td>
-                        <a href="./edit.html?id=${oneAnime.id}">Edit</a>
-                        <button class="delete" value=${oneAnime.id}>Delete</button>
-                    </td>
-                </tr>
-            `;
-            animeList.insertAdjacentHTML('beforeend', animeRow);
-        });
+                animeData.forEach(anime => {
+                    const animeCard = document.createElement('div');
+                    animeCard.classList.add('anime-card');
+                    
+                    animeCard.innerHTML = `
+                        <div class="anime-image">
+                            <img src="${anime.image}" alt="Anime Image">
+                        </div>
+                        <div class="anime-details">
+                            <h3 class="anime-name-jp">${anime.nameJP}</h3>
+                            <h4 class="anime-name-en">${anime.nameEN}</h4>
+                            <p class="release-date"><strong>Release Date:</strong> ${anime.releaseDate}</p>
+                            <p class="source-id"><strong>Source ID:</strong> ${anime.sourceID}</p>
+                            <p class="episodes"><strong>Episodes:</strong> ${anime.episodes}</p>
+                            <p class="description">${anime.description}</p>
+                            <p class="studio"><strong>Studio:</strong> ${anime.studio}</p>
+                            <div class="actions">
+                                <button class="action-button">Action 1</button>
+                                <button class="action-button">Action 2</button>
+                            </div>
+                        </div>
+                    `;
+                    
+                    animeList.appendChild(animeCard);
+                });
         editDeleteButtons();
     } catch (error) {
         console.error('Error fetching anime:', error);
@@ -43,13 +50,14 @@ async function saveAnime(event) {
     const episodes = document.getElementById('anime-episodes').value;
     const description = document.getElementById('anime-description').value;
     const studio = document.getElementById('anime-studio').value;
+    const image = document.getElementById('anime-image').value;
 
     console.log(id);
     try {
         if (id) {
-            await axios.put(`${apiUrl}/${id}`, { nameJP, nameEN, releaseDate, sourceId, episodes, description, studio });
+            await axios.put(`${apiUrl}/${id}`, { nameJP, nameEN, releaseDate, sourceId, episodes, description, studio, image });
         } else {
-            await axios.post(apiUrl, { nameJP, nameEN, releaseDate, sourceId, episodes, description, studio });
+            await axios.post(apiUrl, { nameJP, nameEN, releaseDate, sourceId, episodes, description, studio, image });
         }
         
         window.location.href = "http://127.0.0.1:5500/views/";
@@ -74,6 +82,7 @@ async function editAnime() {
         document.getElementById('anime-episodes').value = anime.episodes;
         document.getElementById('anime-description').value = anime.description;
         document.getElementById('anime-studio').value = anime.studio;
+        document.getElementById('anime-image').value = anime.image;
 
     } catch (error) {
         console.error('Error fetching anime:', error);

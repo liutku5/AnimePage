@@ -13,23 +13,30 @@
 
     <div class="anime-container">
         <h2>Anime List</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name JP</th>
-                    <th>Name EN</th>
-                    <th>Release Date</th>
-                    <th>Source ID</th>
-                    <th>Episodes</th>
-                    <th>Description</th>
-                    <th>Studio</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="anime-list">
-                <!-- Anime will be appended here -->
-            </tbody>
-        </table>
+        <div id="anime-list" class="card-container">
+            <!-- Anime cards will be appended here -->
+            <div class="anime-card">
+                <div class="anime-image">
+                    <img src="image_url" alt="Anime Image">
+                </div>
+                <div class="anime-details">
+                    <h3 class="anime-name-jp">Name JP</h3>
+                    <h4 class="anime-name-en">Name EN</h4>
+                    <p class="release-date"><strong>Release Date:</strong> 2022-01-01</p>
+                    <p class="source-id"><strong>Source ID:</strong> 12345</p>
+                    <p class="episodes"><strong>Episodes:</strong> 12</p>
+                    <p class="description">This is a brief description of the anime.</p>
+                    <p class="studio"><strong>Studio:</strong> Studio Name</p>
+                    <div class="actions">
+                        <button class="action-button">Action 1</button>
+                        <button class="action-button">Action 2</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat .anime-card for each anime -->
+        </div>
+    </div>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
