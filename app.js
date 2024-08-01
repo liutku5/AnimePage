@@ -7,6 +7,7 @@ async function fetchAnime() {
         const animeList = document.getElementById('anime-list');
         animeList.innerHTML = '';
 
+        
         animeData.forEach(anime => {
             const animeCard = document.createElement('div');
             animeCard.classList.add('anime-card');

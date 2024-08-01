@@ -3,33 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="../app.js"></script>
-    <title>Anime</title>
+    <title>Edit Anime</title>
     <link rel="stylesheet" href="../main.css">
 </head>
 <body>
-    <h1>Anime</h1>
-
-    <div class="form-container">
-        <form id="anime-form">
-            <input type="hidden" id="anime-id">
-            <input type="text" id="anime-nameJP" placeholder="Name JP" required>
-            <input type="text" id="anime-nameEN" placeholder="Name EN" required>
-            <input type="date" id="anime-releaseDate" placeholder="Release Date" required>
-            <input type="text" id="anime-sourceId" placeholder="Source ID" required>
-            <input type="number" id="anime-episodes" placeholder="Episodes" required>
-            <textarea id="anime-description" placeholder="Description" required></textarea>
-            <input type="text" id="anime-studio" placeholder="Studio" required>
-            <input type="text" id="anime-image" placeholder="Image url" required>
-            <button type="submit">Update</button>
-        </form>
+    <div class="side-nav">
+        <a href="./home.html">Home</a>
+        <a href="./index.html">Anime List</a>
+        <a href="./create.html">Create Anime</a>
+       
     </div>
+    <h1>Edit Anime</h1>
+    <form id="anime-form">
+        <input type="hidden" id="anime-id">
+        <label for="anime-nameJP">Name JP:</label>
+        <input type="text" id="anime-nameJP">
+        <label for="anime-nameEN">Name EN:</label>
+        <input type="text" id="anime-nameEN">
+        <label for="anime-releaseDate">Release Date:</label>
+        <input type="date" id="anime-releaseDate">
+        <label for="anime-sourceId">Source ID:</label>
+        <input type="text" id="anime-sourceId">
+        <label for="anime-episodes">Episodes:</label>
+        <input type="number" id="anime-episodes">
+        <label for="anime-description">Description:</label>
+        <textarea id="anime-description"></textarea>
+        <label for="anime-studio">Studio:</label>
+        <input type="text" id="anime-studio">
+        <label for="anime-image">Image URL:</label>
+        <input type="text" id="anime-image">
+        <button type="submit">Save</button>
+    </form>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            editAnime();
-        });
-    </script>
+    <script src="../animeDetails.js"></script>
 </body>
 </html>

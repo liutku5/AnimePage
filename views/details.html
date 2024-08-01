@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="../animeList.js"></script>
+    <script defer src="../animeDetails.js"></script>
     <title>Anime</title>
-    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="../details.css">
 </head>
 <body>
     <div class="side-nav">
@@ -13,17 +13,8 @@
         <a href="./index.html">Anime List</a>
         <a href="./create.html">Create Anime</a>
     </div>
-    <div class="anime-container">
-        <h2>Anime List</h2>
-        <div id="anime-list" class="card-container">
-        </div>
-    </div>
-
+    <h1>Anime Details</h1>
+    <div id="anime-details"></div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            fetchAnime();
-        });
-    </script>
 </body>
 </html>

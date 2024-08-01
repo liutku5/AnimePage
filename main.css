@@ -1,6 +1,7 @@
 body {
+    display: flex;
+    margin: 0;
     font-family: Arial, sans-serif;
-    margin: 20px;
 }
 
 h1, h2 {
@@ -10,7 +11,8 @@ h1, h2 {
 .form-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-left: 500px;
+    margin-top: 100px;
 }
 
 #anime-form {
@@ -127,3 +129,29 @@ img {
 .action-button:hover {
     background-color: #0056b3;
 }
+
+
+
+.side-nav {
+    width: 250px;
+    background-color: #333;
+    position: fixed;
+    height: 100%;
+    padding-top: 20px;
+}
+
+.side-nav a {
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+}
+
+.side-nav a:hover {
+    background-color: #575757;
+}
+
+
+
+
